@@ -4,7 +4,7 @@ abstract class Info
 {
     static HashMap<String,String> employeeMap=new HashMap<String,String>();
     static HashMap<String,String> employerMap=new HashMap<String,String>();
-    static int a[][]= new int [100][3];
+    static int leave[][]= new int [100][3];
     static int s=0;
  
 }
@@ -14,22 +14,25 @@ class Exec
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
         Admin a= new Admin();
-        String pass;
+        String password;
         int choice;
-       while(true){
-        System.out.println("Enter 1 for Admin");
-        System.out.println("Enter 2 for Employee");
-        System.out.println("Enter 3 for Employer");
+       do{
+        System.out.print("Enter 1 for Admin, ");
+        System.out.print ("2 for Employee, ");
+        System.out.print("3 for Employer and -1 to exit- ");
+        
+        choice = sc.nextInt();
         switch(choice){
             case 1: 
             System.out.println("Enter the Admin password");
-            pass= sc.nextLine();
-            if(pass == a.pass){
+            password= sc.next();
+            if(password.compareTo(a.pass)==0){
+                System.out.println("WELCOME.");
             }
             else{
                 System.out.println("Incorrect password");
             }
-            }
+            
             break;
             case 2:
             System.out.println("Enter the Employee password");
@@ -37,11 +40,14 @@ class Exec
             case 3:
             System.out.println("Enter the Employer password");
             break;
+            case -1:
+            break;
+            default:
+            System.out.println("INVALID CHOICE. TRY AGAIN");
 
         }
 
-        }
+        }while(choice!=-1);
        }
         
     }
-}
