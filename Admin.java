@@ -7,6 +7,8 @@ class Admin extends Info
     void addEmployee(String n, String p)
     {
         employeeMap.put(n, p);
+        employeeAttendance.put(n,0);
+        
     }
     void removeEmployee(String n)
     {
