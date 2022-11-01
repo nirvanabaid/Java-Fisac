@@ -16,6 +16,14 @@ public class Employer extends Info{
         {
             System.out.print("Employee: "+m.getKey()+"Status: ") ;
             stat=sc.nextInt();
+            try{
+                if(stat!=1 && stat!=0){
+                    throw new exception("Please enter either 1 or 0");
+                }
+            }
+            catch(exception e){
+                System.out.println(e.getMessage());
+            }
             if (stat==1){
                 //Give Attendance
             }
@@ -29,6 +37,14 @@ public class Employer extends Info{
         System.out.println("0 for Rejection and 1 for Approve");
         System.out.println("Leave Request");//From Reason of *n* Person
         approve=sc.nextInt();
+        try{
+            if(approve!=1 && approve!=0){
+                throw new exception("Please enter either 1 or 0");
+            }
+        }
+        catch(exception e){
+            System.out.println(e.getMessage());
+        }
         if (approve==1){
             return true;
         }
