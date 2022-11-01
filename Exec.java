@@ -88,12 +88,14 @@ class Exec
                 switch(c)
                 {
                     case 1:
-                    System.out.print("Enter reason for leave- ");
-                    reason=sc.nextLine();
+                    System.out.println("Enter reason for leave- ");
+                    reason=sc.next();
                     e.Requestleave(uid, reason, "false");
                     break;
                     case 2:
                     e.ReviewLeave(uid);
+                    break;
+                    case -1:
                     break;
                     default:
                     System.out.println("INVALID CHOICE. TRY AGAIN.");
