@@ -43,7 +43,10 @@ class Admin extends Info
     }
     void disp()
     {
-        
+        for(Map.Entry m:employeeMap.entrySet())  
+     {  
+        System.out.println(m.getKey()+" "+m.getValue());   
+     }
     }
     
 }
