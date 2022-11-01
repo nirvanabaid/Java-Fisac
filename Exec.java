@@ -4,7 +4,7 @@ abstract class Info
 {
     static HashMap<String,String> employeeMap=new HashMap<String,String>();
     static HashMap<String,String> employerMap=new HashMap<String,String>();
-    static int leave[][]= new int [100][3];
+    static String leave[][]= new String [100][3];
     static int s=0;
  
 }
