@@ -89,7 +89,8 @@ class Exec
                 {
                     case 1:
                     System.out.println("Enter reason for leave- ");
-                    reason=sc.next();
+                    sc.nextLine();
+                    reason=sc.nextLine();
                     e.Requestleave(uid, reason, "false");
                     break;
                     case 2:
