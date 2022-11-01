@@ -1,3 +1,4 @@
+import java.net.SocketTimeoutException;
 import java.util.*;
 abstract class Info
 {
@@ -11,16 +12,36 @@ abstract class Info
 class Exec
 {
     public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
         Admin a= new Admin();
-        
-        a.addEmployee("nirvana", "123456");
-        a.addEmployee("aman", "hello");
+        String pass;
+        int choice;
+       while(true){
+        System.out.println("Enter 1 for Admin");
+        System.out.println("Enter 2 for Employee");
+        System.out.println("Enter 3 for Employer");
+        switch(choice){
+            case 1: 
+            System.out.println("Enter the Admin password");
+            pass= sc.nextLine();
+            if(pass == a.pass){
+            }
+            else{
+                System.out.println("Incorrect password");
+            }
+            }
+            break;
+            case 2:
+            System.out.println("Enter the Employee password");
+            break;
+            case 3:
+            System.out.println("Enter the Employer password");
+            break;
 
-        a.disp();
-        Employer b= new Employer();
-        b.addEmployee("aadarsh", "employer");
-        System.out.println(b.s);
-        a.disp();
+        }
+
+        }
+       }
         
     }
 }
