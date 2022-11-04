@@ -21,7 +21,7 @@ class Employee extends Info {
     for(int i = 0; i < s; i++)
     {
         
-            if(leave[i][0] == user_name)
+            if(leave[i][0].compareTo(user_name)==0)
             {
                 System.out.println("USERNAME- "+ leave[i][0]);
                 System.out.println("REASON- "+ leave[i][1]);
