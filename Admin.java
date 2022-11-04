@@ -55,11 +55,49 @@ class Admin extends Info
  
             Map.Entry mapElement
                 = (Map.Entry)employeeMapIterator.next();
-            int marks = ((int)mapElement.getValue() + 10);
  
             // Printing mark corresponding to string entries
             System.out.println(mapElement.getKey() + " : "
-                               + marks);
+                               + mapElement.getValue());
+        }
+    }
+
+    void employerDisp()
+    {
+        Iterator employerMapIterator = employerMap.entrySet().iterator();
+        while (employerMapIterator.hasNext()) {
+ 
+            Map.Entry mapElement
+                = (Map.Entry)employerMapIterator.next();
+            
+ 
+            // Printing mark corresponding to string entries
+            System.out.println(mapElement.getKey() + " : "
+                               + mapElement.getValue());
+        }
+    }
+
+    void changePass()
+    {
+        String s;
+        System.out.print("Enter current password- ");
+        s=sc.next();
+        if(s.compareTo(pass)==0)
+        {
+            //System.out.println();
+            System.out.print("Enter new password- ");
+            s=sc.next();
+            System.out.print("Confirm new password- ");
+            if(s.compareTo(sc.next())==0)
+            {
+                pass=s;
+            }
+            else{
+                System.out.println("Passwords does not match.");
+            }
+        }
+        else{
+            System.out.print("WRONG PASSWORD");
         }
     }
     

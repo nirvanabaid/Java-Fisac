@@ -26,7 +26,12 @@ class Exec
         int choice;
         int c;
         String reason;
+        System.out.println("Initial Admin password is '123456'.\nIt is recommended to change the password as soon as possible.");
+        System.out.println();
        do{
+        //System.out.println();
+        //System.out.println();
+        System.out.println("===============LOGIN===============");
         System.out.print("Enter 1 for Admin, ");
         System.out.print ("2 for Employee, ");
         System.out.print("3 for Employer and -1 to exit- ");
@@ -37,10 +42,15 @@ class Exec
             System.out.println("Enter the Admin password");
             password= sc.next();
             if(password.compareTo(a.pass)==0){
-                System.out.println("===============WELCOME===============");
+                //System.out.println("===============WELCOME===============");
+                //System.out.println();
                 System.out.println();
+                    //System.out.println();
+                    System.out.println("===============WELCOME TO ADMIN PAGE===============");
                 do{
-                    System.out.print("Enter 1 to add employee, 2 to remove employee, 3 to add employer, 4 to remove employer, \n5 to view employee details, and -1 to exit- ");
+                    System.out.println("\n");
+                    System.out.print("Enter 1 to add employee, 2 to remove employee, 3 to add employer, 4 to remove employer, \n5 to view employee details, 6 to view employer details, 7 to change password, and -1 to exit- ");
+                    System.out.println();
                     c=sc.nextInt();
                     switch(c)
                     {
@@ -71,7 +81,16 @@ class Exec
                         case 5:
                         a.employeeDisp();
                         break;
+                        case 6:
+                        a.employerDisp();
+                        break;
+                        case 7:
+                        a.changePass();
+                        break;
                         case -1:
+                        System.out.println("THANK YOU");
+                    System.out.println();
+                    System.out.println();
                         break;
                         default:
                         System.out.println("INVALID CHOICE. TRY AGAIN.");
@@ -90,10 +109,16 @@ class Exec
             System.out.println("Enter the Employee password");
             password= sc.next();
             if(password.compareTo(e.employeeMap.get(uid))==0){
-                System.out.println("===============WELCOME===============");
+                // System.out.println("===============WELCOME===============");
+                // System.out.println();
                 System.out.println();
+                //System.out.println();
+                System.out.println("===============WELCOME TO EMPLOYEE PAGE===============");
                 do{
+                    
+                System.out.println();
                 System.out.print("Enter 1 to request leave, 2 to review leave status, 3 to view attendance and-1 to exit- ");
+                System.out.println();
                 c=sc.nextInt();
                 switch(c)
                 {
@@ -110,6 +135,9 @@ class Exec
                     e.viewAttendance(uid);
                     break;
                     case -1:
+                    System.out.println("THANK YOU");
+                    System.out.println();
+                    System.out.println();
                     break;
                     default:
                     System.out.println("INVALID CHOICE. TRY AGAIN.");
@@ -127,10 +155,15 @@ class Exec
             System.out.println("Enter the Employee password");
             password= sc.next();
             if(password.compareTo(b.employerMap.get(uid))== 0){
-                System.out.println("===============WELCOME===============");
+                // System.out.println("===============WELCOME===============");
+                // System.out.println();
                 System.out.println();
+                    //System.out.println();
+                    System.out.println("===============WELCOME TO EMPLOYER PAGE===============");
                 do{
+                System.out.println();
                 System.out.print("Enter 1 to addAttendance, 2 to review leaves and -1 to exit- ");
+                System.out.println();
                 c=sc.nextInt();
                 System.out.println();
                 switch(c)
