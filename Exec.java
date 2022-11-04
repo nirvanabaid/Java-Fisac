@@ -35,7 +35,7 @@ class Exec
             if(password.compareTo(a.pass)==0){
                 System.out.println("WELCOME.");
                 do{
-                    System.out.print("Enter 1 to add employee, 2 to remove employee, 3 to add employer, 4 to remove employer, -1 to exit- ");
+                    System.out.print("Enter 1 to add employee, 2 to remove employee, 3 to add employer, 4 to remove employer, \n5 to view employee details, and -1 to exit- ");
                     c=sc.nextInt();
                     switch(c)
                     {
@@ -62,6 +62,9 @@ class Exec
                         System.out.print("Enter username- ");
                         uid=sc.next();
                         a.removeEmployee(uid);
+                        break;
+                        case 5:
+                        a.employeeDisp();
                         break;
                         case -1:
                         break;

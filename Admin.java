@@ -43,12 +43,19 @@ class Admin extends Info
         }
         
     }
-    void disp()
+    void employeeDisp()
     {
-        for(Map.Entry m:employeeMap.entrySet())  
-     {  
-        System.out.println(m.getKey()+" "+m.getValue());   
-     }
+        Iterator employeeMapIterator = employeeMap.entrySet().iterator();
+        while (employeeMapIterator.hasNext()) {
+ 
+            Map.Entry mapElement
+                = (Map.Entry)employeeMapIterator.next();
+            int marks = ((int)mapElement.getValue() + 10);
+ 
+            // Printing mark corresponding to string entries
+            System.out.println(mapElement.getKey() + " : "
+                               + marks);
+        }
     }
     
 }
