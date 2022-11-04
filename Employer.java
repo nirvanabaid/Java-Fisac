@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Employer extends Info{
     Scanner sc=new Scanner(System.in);
-    void disp_all()
+    void emp_disp_all()
     {
         for (Map.Entry m: employeeMap.entrySet())
         {
@@ -10,14 +10,14 @@ public class Employer extends Info{
         }
     }
     void addAttendance(){
-        int stat;
+        int stat; int i=0;
         System.out.print("Give attendance to all employees\n1 for Present\n0 for absent");
-        for (Map.Entry m: employeeMap.entrySet())
+        while(i<l)
         {
-            System.out.print("Employee: "+m.getKey()+"Status: ") ;
+            System.out.print("Employee: "+ename[i]+"      Status: ") ;
             stat=sc.nextInt();
             try{
-                if(stat!=1 && stat!=0){
+                if(stat!=1 || stat!=0){
                     throw new exception("Please enter either 1 or 0");
                 }
             }
@@ -25,20 +25,28 @@ public class Employer extends Info{
                 System.out.println(e.getMessage());
             }
             if (stat==1){
-                //Give Attendance
+                p[i]++;
+                i++;
             }
             else{
-                //No Attendance
+                a[i]++;
+                i++;
             }
         }
     }
-    boolean leaveRec(String n){
+    void leaveRec(){
         int approve;
-        System.out.println("0 for Rejection and 1 for Approve");
-        System.out.println("Leave Request");//From Reason of *n* Person
+        int i=0;
+        
+        while(i<s)
+        {
+        System.out.println("===============Leave Request===============");//From Reason of *n* Person
+        System.out.println("USERNAME- "+ leave[i][0]);
+        System.out.println("REASON- "+ leave[i][1]);
+        System.out.println("Enter 0 for Rejection and 1 for Approval");
         approve=sc.nextInt();
         try{
-            if(approve!=1 && approve!=0){
+            if(approve!=1 || approve!=0){
                 throw new exception("Please enter either 1 or 0");
             }
         }
@@ -46,11 +54,14 @@ public class Employer extends Info{
             System.out.println(e.getMessage());
         }
         if (approve==1){
-            return true;
+            leave[i][2]="ACCEPTED";
+            i++;
         }
         else{
-            return false;
+            leave[i][2]="DECLINED";
+            i++;
         }
+    }
     }
 }
 

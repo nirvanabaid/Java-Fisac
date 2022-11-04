@@ -8,6 +8,10 @@ class Admin extends Info
     {
         employeeMap.put(n, p);
         employeeAttendance.put(n,0);
+        ename[l]=n;
+        Admin.p[l]=0;
+        a[l]=0;
+        l++;
         
     }
     void removeEmployee(String n)
@@ -43,6 +47,7 @@ class Admin extends Info
         }
         
     }
+
     void employeeDisp()
     {
         Iterator employeeMapIterator = employeeMap.entrySet().iterator();

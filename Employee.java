@@ -1,4 +1,6 @@
 import java.util.*;
+
+import javax.lang.model.util.ElementScanner14;
 class Employee extends Info {
     Scanner in = new Scanner(System.in);
    void Requestleave(String user_name, String reason, String status)
@@ -18,15 +20,35 @@ class Employee extends Info {
     else{
     for(int i = 0; i < s; i++)
     {
-        for(int j = 0; j < 3; j++)
-        {
+        
             if(leave[i][0] == user_name)
             {
-                System.out.println(leave[i][j]);
+                System.out.println("USERNAME- "+ leave[i][0]);
+                System.out.println("REASON- "+ leave[i][1]);
+                System.out.println("REQUEST STATUS- "+ leave[i][2]);
+            }
+        
+    }
+    }
+}
+   
+
+   void viewAttendance(String user_name)
+   {
+        for(int i=0; i<l;i++)
+        {
+            if(user_name.compareTo(ename[i])==0)
+            {
+                System.out.println("No. of days present- "+p[i]);
+                System.out.println("No. of days absent- "+a[i]);
+                double perc=0.0;
+                if((a[i]+p[i])!=0)
+                    perc=  ((p[i])/(p[i]+a[i])*100);
+               
+                System.out.println("Attendance percentage- "+perc);
+                
             }
         }
-    }
-    }
    }
 
 
