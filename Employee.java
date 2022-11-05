@@ -41,11 +41,6 @@ class Employee extends Info {
             {
                 System.out.println("No. of days present- "+p[i]);
                 System.out.println("No. of days absent- "+a[i]);
-                double perc=0.0;
-                if((a[i]+p[i])!=0)
-                    perc=  ((p[i])/(p[i]+a[i])*100);
-               
-                System.out.println("Attendance percentage- "+perc);
                 
             }
         }
